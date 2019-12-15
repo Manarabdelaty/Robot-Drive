@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/backgroundcolor"
+    android:padding="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="0.7"
+        app:layout_constraintLeft_toRightOf="@id/layout_left"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_connect"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/blueetooth_btn"
+            app:layout_constraintBottom_toTopOf="@id/simpleSeekBar"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintLeft_toRightOf="@id/layout_arrows"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="0.2" />
+
+
+        <SeekBar
+            android:id="@+id/simpleSeekBar"
+            android:layout_width="212dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:max="200"
+            android:progress="20"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:rotation="270"
+            android:thumb="@drawable/minus_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="0.2"
+            app:layout_constraintLeft_toRightOf="@id/layout_arrows"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_connect"
+            app:layout_constraintVertical_weight="0.8" /><!-- set custom progress drawable for the progress -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_arrows"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="0.8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/button_connect"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/button_forward"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/arrow_pointing_up"
+                android:tileMode="disabled"
+                app:layout_constraintBottom_toTopOf="@id/button_brake"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_right"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/arrow_pointing_left"
+                android:tileMode="disabled"
+                app:layout_constraintBottom_toTopOf="@id/button_backward"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/button_brake"
+                app:layout_constraintTop_toBottomOf="@id/button_forward" />
+
+            <Button
+                android:id="@+id/button_brake"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/notbrake"
+                android:tileMode="disabled"
+                app:layout_constraintBottom_toTopOf="@id/button_backward"
+                app:layout_constraintHorizontal_weight="0.4"
+                app:layout_constraintLeft_toRightOf="@id/button_right"
+                app:layout_constraintRight_toLeftOf="@id/button_left"
+                app:layout_constraintTop_toBottomOf="@id/button_forward" />
+
+            <Button
+                android:id="@+id/button_backward"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/arrow_pointing_down"
+                android:tileMode="disabled"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/button_forward"
+                app:layout_constraintRight_toRightOf="@id/button_forward"
+                app:layout_constraintTop_toBottomOf="@id/button_brake" />
+
+            <Button
+                android:id="@+id/button_left"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/arrow_pointing_right"
+                android:tileMode="disabled"
+                app:layout_constraintBottom_toTopOf="@id/button_backward"
+                app:layout_constraintHorizontal_weight="0.3"
+                app:layout_constraintLeft_toRightOf="@id/button_brake"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_forward" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="0.3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/layout_right"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_navigate"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="48dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/navigate_btn"
+            app:layout_constraintBottom_toTopOf="@id/button_map"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_map"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/map_btn"
+            app:layout_constraintBottom_toTopOf="@id/button_settings"
+            app:layout_constraintLeft_toLeftOf="@id/button_navigate"
+            app:layout_constraintRight_toRightOf="@id/button_navigate"
+            app:layout_constraintTop_toBottomOf="@id/button_navigate" />
+
+        <Button
+            android:id="@+id/button_settings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/settings_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/button_map"
+            app:layout_constraintRight_toRightOf="@id/button_map"
+            app:layout_constraintTop_toBottomOf="@id/button_map" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.ros.android.android_tutorial_teleop">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:label="@string/app_name">
+        <activity android:name=".Joystick"  android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="landscape" ></activity>
+        <activity
+            android:name=".MapViewer"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".map_nav"
+            android:screenOrientation="landscape" />
+        <activity android:name=".SystemCommands" />
+        <activity android:name=".autoNav" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="org.ros.android.MasterChooser" />
+
+        <service android:name="org.ros.android.NodeMainExecutorService">
+            <intent-filter>
+                <action android:name="org.ros.android.NodeMainExecutorService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
